@@ -18,5 +18,7 @@
 
 			unset($age);
 		?>
+		<br />
+		<a href="index.php">Вернуться назад</a>
 	</body>
 </html>
