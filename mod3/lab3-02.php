@@ -14,5 +14,7 @@
                 $i += 2;
             }
         ?>
+        <br />
+        <a href="index.php">Вернуться назад</a>
     </body>
 </html>

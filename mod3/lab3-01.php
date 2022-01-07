@@ -12,5 +12,7 @@
                 echo($i."<br />");
             }
         ?>
+        <br />
+        <a href="index.php">Вернуться назад</a>
     </body>
 </html>
