@@ -1,4 +1,4 @@
-<!DOCTYPE htnl>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -9,15 +9,15 @@
 		<h1>Лабораторная работа 04</h1>
 		<br />
 		<?php
-		$size = ini_get('post_max_size');
-		$letter = $size{strlen($size) - 1};
-		$size = (integer)$size;
-		switch($letter){
-			case 'G': $size *= 1024;
-			case 'M': $size *= 1024;
-			case 'K': $size *= 1024;
-		}
-		echo ("POST_MAX_SIZE = ".$size." bytes.");
+            $size = ini_get('post_max_size');
+            $letter = $size{strlen($size) - 1};
+            $size = (integer)$size;
+            switch($letter){
+                case 'G': $size *= 1024;
+                case 'M': $size *= 1024;
+                case 'K': $size *= 1024;
+            }
+            echo ("POST_MAX_SIZE = ".$size." bytes.");
 		?>
 		<br />
 		<a href="index.php">Вернуться назад</a>
