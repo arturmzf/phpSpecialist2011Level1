@@ -10,10 +10,10 @@
         <?php
             $i = 1;
             while($i < 50){
-                echo("i = ".$i."<br />");
+                echo("<h4>*** i = ".$i." ***</h4><br />");
                 $k = 1;
                 while($k < 50){
-                    echo("\t k = ".$k."<br />");
+                    echo("<p>k = ".$k."</p><br />");
                     $k += 2;
                     if($k == 17){
                         break;
