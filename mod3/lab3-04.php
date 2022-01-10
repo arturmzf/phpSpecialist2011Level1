@@ -42,5 +42,7 @@
 
         echo("\n\t\t</table>\n");
         ?>
+        <br />
+        <a href="index.php">Вернуться назад</a>
     </body>
 </html>
