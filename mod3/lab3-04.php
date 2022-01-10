@@ -23,22 +23,24 @@
 
         $cols = 10;
         $rows = 10;
+        $color = "yellow";
 
-        echo("<table border=\"7\">");
+        echo("<table border=\"7 \">");
         for($i = 1; $i <= $rows; $i++){
 
+            echo("\n\t\t\t<tr>\n");
             for($j = 1; $j <= $cols; $j++){
                 if(($i == 1) || ($j == 1)){
-                    echo("<th bgcolor=\"yellow\">". $i*$j."</th>");
+                    echo("\t\t\t\t<th bgcolor=\"".$color."\">".$i*$j."</th>\n");
                 } else{
-                    echo("<td>".$i*$j."</td>");
+                    echo("\t\t\t\t<td>".$i*$j."</td>\n");
                 }
             }
 
-            echo("</tr>");
+            echo("\t\t\t</tr>");
         }
 
-        echo("</table>");
+        echo("\n\t\t</table>\n");
         ?>
     </body>
 </html>
