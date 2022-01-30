@@ -29,6 +29,11 @@
 
     $message = "До моего следующего Дня рождения осталось:<br />".$difference." секунд.";
 
+    echo("Powered by PHP".PHP_VERSION." on ".PHP_OS."<br />");
+    echo("Powered by ".$_SERVER["SERVER_SOFTWARE"]."<br /><br />");
+    print_r($GLOBALS);
+
+
 echo <<<VIEW
 <!DOCTYPE html>
 <html>

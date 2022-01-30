@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/mod5/lab5-03-site/index.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/mod5/lab5-03-site/lib.inc.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/mod5/lab5-03-site/menu.inc.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/mod5/lab5-03-site/top.inc.php" charset="windows-1251" />
     <file url="file://$USER_HOME$/OneDrive/Documents/Education/PHP 2011 Lvl1/htdocs/mod5/date.php" charset="windows-1251" />
     <file url="file://$USER_HOME$/OneDrive/Documents/Education/PHP 2011 Lvl1/htdocs/mod5/strings.php" charset="windows-1251" />
     <file url="file://$USER_HOME$/OneDrive/Documents/Education/PHP 2011 Lvl1/labs/Заготовки для лабораторных работ/mod3/menu.php" charset="windows-1251" />
