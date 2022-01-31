@@ -60,6 +60,7 @@
                 </td>
             </tr>
         </table>
-
+        <br />
+        <a href="../index.php">Вернуться назад</a>
     </body>
 </html>
