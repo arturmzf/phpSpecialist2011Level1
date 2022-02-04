@@ -11,7 +11,8 @@
 		"Page1"=>"index.php?id=page1",
 		"Page2"=>"index.php?id=page2",
 		"Page3"=>"index.php?id=page3",
-		"Table"=>"index.php?id=table");
+		"Table"=>"index.php?id=table",
+        "Calculator"=>"index.php?id=calculator");
 
 ?>	
 <table width="100%">

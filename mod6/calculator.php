@@ -1,46 +1,108 @@
 <?php
-/*
-ЗАДАНИЕ 1
-- Проверьте, была ли корректно отправлена форма
-- Если она была отправлена, отфильтруйте полученные значения
-- В зависимости от оператора производите различные математические действия
-- В случае деления, проверьте, делитель на равенство с нулем (на ноль делить нельзя)
-- Сохраните полученный результат вычисления в переменной
-*/
+    /*
+    ЗАДАНИЕ 1
+    - Проверьте, была ли корректно отправлена форма
+    - Если она была отправлена, отфильтруйте полученные значения
+    - В зависимости от оператора производите различные математические действия
+    - В случае деления, проверьте, делитель на равенство с нулем (на ноль делить нельзя)
+    - Сохраните полученный результат вычисления в переменной
+    */
+
+    // Функция - Обрабатываем входные данные в зависимости от их типа
+    function clearData($data, $type = "flt"){
+        switch($type){
+            case "flt":
+                return (float)$data;
+                break;
+            case "str":
+                return trim(strip_tags($data));
+                break;
+        }
+    }
+
+    $result = 0.000;
+    $num1 = 0.000;
+    $num2 = 0.000;
+    $operator = "";
+    $outputMessage = "";
+
+    // Проверяем, зашёл ли пользователь "со стороны", либо же перешёл сюда, заполнив форму
+    if(($_SERVER["REQUEST_METHOD"] == "POST") || ($_SERVER["REQUEST_METHOD"] == "GET")){
+        //TODO: Проверить, все ли поля пришли
+        $num1 = clearData($_POST["num1"]);
+        $operator = clearData($_POST["operator"], "str");
+        $num2 = clearData($_POST["num2"]);
+
+        $outputMessage = "$num1 $operator $num2 = ";
+
+        switch($operator){
+            case "+":
+                $result = (float)($num1 + $num2);
+                break;
+            case "-":
+                $result = (float)($num1 - $num2);
+                break;
+            case "*":
+                $result = (float)($num1 * $num2);
+                break;
+            case "/":
+                if($num2 == 0){
+                    $result = "ОШИБКА! На нуль делить нельзя!";
+                }else{
+                    $result = (float)($num1 / $num2);
+                }
+                break;
+            default:
+                $result = "Неизвестный оператор";
+        }
+
+        if($result == "ОШИБКА! На нуль делить нельзя!") {
+            $outputMessage = $result;
+        } elseif($result == "Неизвестный оператор"){
+            $outputMessage = $result." \"$operator\"";
+        } else{
+            $outputMessage .= $result;
+        }
+    }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
-<head>
-	<title>Калькулятор</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-</head>
-<body>
+<html lang="ru">
+    <head>
+        <title>Калькулятор</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
 
-<h1>Калькулятор</h1>
+        <h1>Калькулятор</h1>
 
-<?php
-/*
-ЗАДАНИЕ 2
-- Если результат существует, выведите его
-*/
-?>
+        <?php
+            /*
+            ЗАДАНИЕ 2
+            - Если результат существует, выведите его
+            */
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            if($outputMessage){
+                echo("<h2>Результат:<br />".$outputMessage."</h2>");
+            }
+        ?>
 
-Число 1:<br />
-<input type="text" name="num1" /><br /><br />
+         <form action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="post">
+         <!--<form action="calculator.php" method="post">-->
 
-Оператор:<br />
-<input type="text" name="operator" /><br /><br />
+            Число 1:<br />
+            <input type="text" name="num1" /><br /><br />
 
-Число 2:<br />
-<input type="text" name="num2" /><br /><br />
+            Оператор:<br />
+            <input type="text" name="operator" /><br /><br />
 
-<input type="submit" value="Считать!" />
+            Число 2:<br />
+            <input type="text" name="num2" /><br /><br />
 
-</form>
+            <input type="submit" value="Считать!" />
 
-</body>
+        </form>
+
+    </body>
 </html>

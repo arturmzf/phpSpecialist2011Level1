@@ -56,6 +56,10 @@
                         case table:
                             getTable();
                             break;
+                        case calculator:
+                            // echo("<h1>Калькулятор</h1>"); // Там уже есть заголовок...
+                            include("calculator.php");
+                            break;
                         default:
                             echo("<h1>Главная</h1>");
                             break;
